@@ -57,13 +57,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiashano/dsh-workspace-switcher.git"
+    "url": "https://github.com/Xiashano1/dsh-workspace-switcher.git"
   },
-  "homepage": "https://github.com/xiashano/dsh-workspace-switcher#readme",
+  "homepage": "https://github.com/Xiashano1/dsh-workspace-switcher#readme",
   "bugs": {
-    "url": "https://github.com/xiashano/dsh-workspace-switcher/issues"
+    "url": "https://github.com/Xiashano1/dsh-workspace-switcher/issues"
   },
-  "author": "xiashano",
+  "author": "Xiashano1",
   "publishConfig": {
     "access": "public"
   }
