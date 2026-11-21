@@ -1,6 +1,6 @@
 {
   "name": "dsh-workspace-switcher",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "把 DSH 侧栏的工作区列表变成只显示当前工作区的切换器：弹窗选择、搜索、键盘导航、拖拽排序、右键重命名/删除、新建会话",
   "type": "module",
   "main": "lib/index.js",
