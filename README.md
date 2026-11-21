@@ -26,36 +26,34 @@
 | **弹窗切换** | 点选择器弹出工作区列表 |
 | **搜索** | 按名称或路径过滤 |
 | **键盘导航** | ↑↓ 选择、Enter 确认、Esc 关闭 |
-| **拖拽排序** | 按住左侧 3 杠手柄拖动，实时动画，顺序持久化 |
+| **拖拽排序** | 按住左侧 3 杠手柄拖动，越过中线即换位，顺序持久化 |
 | **右键菜单** | 重命名（查重）/ 复制路径 / 删除工作区（带确认） |
 | **新建会话** | 点 `＋` 在当前工作区创建 |
 | **双向同步** | 在 DSH 原生下拉切换时，插件自动跟随 |
 
 ## 安装
 
-### 方式一：下载 tgz 安装（推荐）
+### 方式一：npm（推荐）
 
 ```bash
-# 下载最新版
-curl -L -o dsh-workspace-switcher.tgz \
-  https://github.com/Xiashano1/dsh-workspace-switcher/releases/latest/download/dsh-workspace-switcher-2.3.0.tgz
-
-# 安装
 cd $DSH_HOME/profiles/web
-npm install /path/to/dsh-workspace-switcher.tgz
+npm install dsh-workspace-switcher
 ```
 
-### 方式二：直接从 GitHub 安装
+### 方式二：下载 tgz
 
 ```bash
+curl -L -o dsh-workspace-switcher.tgz \
+  https://github.com/Xiashano1/dsh-workspace-switcher/releases/latest/download/dsh-workspace-switcher-2.6.0.tgz
+
 cd $DSH_HOME/profiles/web
-npm install https://github.com/Xiashano1/dsh-workspace-switcher/releases/download/v2.3.0/dsh-workspace-switcher-2.3.0.tgz
+npm install /path/to/dsh-workspace-switcher.tgz
 ```
 
 ### 方式三：手动拷贝（不用 npm）
 
 ```bash
-tar -xzf dsh-workspace-switcher-2.3.0.tgz
+tar -xzf dsh-workspace-switcher-2.6.0.tgz
 cp -r package $DSH_HOME/profiles/web/node_modules/dsh-workspace-switcher
 ```
 
@@ -85,10 +83,19 @@ cp -r package $DSH_HOME/profiles/web/node_modules/dsh-workspace-switcher
 |---|---|
 | 点选择器 | 打开工作区列表弹窗 |
 | 弹窗里输入 | 搜索工作区（名称/路径） |
-| 选一个工作区 | 切过去，只展开它 |
+| 选一个工作区 | 切过去，打开它已有的第一个会话 |
 | 点 `＋` | 在当前工作区新建会话 |
-| 按住左侧 3 杠拖动 | 调整工作区顺序（自动保存） |
+| 按住左侧 3 杠拖动 | 调整顺序（越过中线即换位，自动保存） |
 | 右键工作区 | 重命名 / 复制路径 / 删除 |
+
+### 排序手感
+
+拖动时：
+
+- 原位置**留空**（不淡化，仍占位）
+- 整行副本**跟随光标**，完全不透明
+- 光标越过其他行的**中线**时，那行立即滑动到你的位置，你占它的位置
+- 其他行用 FLIP 动画平滑让位
 
 ---
 
@@ -130,9 +137,9 @@ window.__DSW_DIAG__()
 
 ### 不会做的事
 
-- ❌ 不删除任何会话或文件
-- ❌ 不修改原生侧栏的搜索/排序/新建功能
-- ❌ 不改 DSH 配置（除 `cordis.patch.yml` 注册外）
+- 不删除任何会话或文件
+- 不修改原生侧栏的搜索/排序/新建功能
+- 不改 DSH 配置（除 `cordis.patch.yml` 注册外）
 
 ---
 
