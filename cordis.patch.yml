@@ -1,0 +1,8 @@
+# dsh-workspace-switcher bundle 层
+# 服务端只提供配置与 HTTP 开关；真正的 UI 替换在 client.js 里通过 slots 完成。
+- insert:
+    - id: dsh-workspace-switcher
+      name: 'dsh-workspace-switcher'
+      config:
+        enabled: true
+        defaultCollapsed: true

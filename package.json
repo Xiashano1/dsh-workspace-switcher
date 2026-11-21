@@ -1,0 +1,70 @@
+{
+  "name": "dsh-workspace-switcher",
+  "version": "2.3.0",
+  "description": "把 DSH 侧栏的工作区列表变成只显示当前工作区的切换器：弹窗选择、搜索、键盘导航、拖拽排序、右键重命名/删除、新建会话",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "workspace",
+    "sidebar",
+    "session-switcher",
+    "ui"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.1 <0.4.0-0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.2.1-rc.1 <0.4.0-0"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.2-rc.1": "compatible",
+        "0.2.2-rc.2": "compatible",
+        "0.2.2-rc.3": "compatible"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiashano/dsh-workspace-switcher.git"
+  },
+  "homepage": "https://github.com/xiashano/dsh-workspace-switcher#readme",
+  "bugs": {
+    "url": "https://github.com/xiashano/dsh-workspace-switcher/issues"
+  },
+  "author": "xiashano",
+  "publishConfig": {
+    "access": "public"
+  }
+}
