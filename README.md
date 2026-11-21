@@ -147,6 +147,10 @@ window.__DSW_DIAG__()
 
 详见 [CHANGELOG.md](CHANGELOG.md)。
 
+## 维护
+
+DSH 升级后插件可能失效。排查方法、依赖清单、修改指南见 **[MAINTAINING.md](MAINTAINING.md)**。
+
 ## License
 
 MIT
